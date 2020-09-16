@@ -1,0 +1,70 @@
+@font-face {
+    font-family: PublicSans;
+    src: url(PublicSans-Black.otf);
+}
+
+html, body {
+    height: 100%;
+}
+body {
+    background-color: #333;
+    overflow-x: hidden;
+}
+.wrapper {
+    width: 1000px;
+    height: 100%;
+
+    margin: auto;
+    padding: 30px 0 0 30px;
+    background-color: #888888;
+
+    /* note to self edit this later :) */
+    background-image: url(gifs/gif1still.gif);
+    background-repeat: no-repeat;
+    background-size: auto 100%;
+    background-position: 35% 100%;
+
+    filter: sepia(100%);
+
+    /*trying to do shorthand ill figure it out later */
+    /*background: url("gifs/gif1still.gif") no-repeat fixed left bottom;
+    */
+}
+
+@keyframes makeSepia {
+    0% {
+        filter: sepia(100%);
+    }
+    100% {
+        filter: sepia(0);
+    }
+}
+.wrapper:hover {
+    animation: makeSepia .5s;
+    animation-fill-mode: forwards;
+}
+li {
+    list-style-type: none;
+}
+li a {
+    font-family: PublicSans;
+    font-size: 100px;
+    color: rgb(255, 255, 255, 60%);
+
+    -webkit-text-stroke: 2.5px #111;
+
+    text-decoration: none;
+
+    display: inline-block;
+    padding-top: 20px;
+}
+
+* {
+    box-sizing: border-box;
+}
+/* Media queries */
+@media (max-width: 760px) {
+    li a {
+        font-size: 75px;
+    }
+}
